@@ -1,4 +1,5 @@
-class Chicken extends MoveableObject {
+import { MoveableObject } from "./moveable-object.classes.js";
+export class Chicken extends MoveableObject {
   y = 360;
   height = 63;
   width = 80;
