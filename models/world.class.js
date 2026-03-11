@@ -1,4 +1,3 @@
-
 import { Character } from "./character.class.js";
 import { level1 } from "../js/levels/level1.js";
 
