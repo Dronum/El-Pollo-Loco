@@ -19,13 +19,13 @@ y = -40;
     constructor () {
         super().loadImage(this.IMAGES_WALKING[0]);
         this.loadImages(this.IMAGES_WALKING);
-        this.x = 2700;
+        this.x = 2200;
         this.animate();
     }
       animate() {
-    this.moveleft();
     setInterval(() => {
+      this.moveleft();
       this.playAnimation(this.IMAGES_WALKING);
-    }, 200);
+    }, 1000);
   }
 }
