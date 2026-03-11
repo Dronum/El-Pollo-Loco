@@ -1,5 +1,3 @@
-
-
 export class MoveableObject {
   x = 120;
   y = 280;
@@ -13,16 +11,16 @@ export class MoveableObject {
   speedY = 0;
   acceleration = 2.5;
 
-  applyGravity(){
-    setInterval(()=>{
-      if(this.isAboveGround()){
-      this.y -= this.speedY;
-      this.speedY -= this.acceleration;
+  applyGravity() {
+    setInterval(() => {
+      if (this.isAboveGround() || this.speedY > 0) {
+        this.y -= this.speedY;
+        this.speedY -= this.acceleration;
       }
-    }, 1000/25);
+    }, 1000 / 25);
   }
-  isAboveGround(){
-    return this.y <180;
+  isAboveGround() {
+    return this.y < 180;
   }
 
   loadImage(path) {
@@ -39,11 +37,11 @@ export class MoveableObject {
   }
 
   playAnimation(images) {
-        let i = this.currentImage % this.IMAGES_WALKING.length;
-        let path = images[i];
-        this.img = this.imageCache[path];
-        this.currentImage++;
-}
+    let i = this.currentImage % this.IMAGES_WALKING.length;
+    let path = images[i];
+    this.img = this.imageCache[path];
+    this.currentImage++;
+  }
 
   moveRight() {
     console.log("Moving right");
@@ -55,4 +53,3 @@ export class MoveableObject {
     }, 1000 / 60);
   }
 }
-
