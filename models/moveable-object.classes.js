@@ -45,12 +45,12 @@ export class MoveableObject {
 
   moveRight() {
     this.x += this.speed;
-    this.otherDirection = false;
+    
   }
 
   moveleft() {
     this.x -= this.speed;
-    this.otherDirection = true;
+    
   }
 
   jump() {
