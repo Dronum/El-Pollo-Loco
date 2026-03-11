@@ -45,10 +45,8 @@ export class Character extends MoveableObject {
         this.otherDirection = true;
       }
 
-      console.log("this.speedY", this.speedY);
-
       if (this.world.keyboard.UP && !this.isAboveGround()) {
-        this.speedY = 20;
+        this.speedY = 30;
       }
       this.world.camera_x = -this.x + 100;
     }, 1000 / 60);
