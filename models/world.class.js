@@ -21,16 +21,19 @@ export class World {
   setWorld() {
     this.character.world = this;
   }
-checkCollisions() {
-  setInterval (() =>{
-    this.level.enemies.forEach((enemy)=> {
-      if (this.character.isColliding(enemy) ) {
-        this.character.energy -= 5;
-        console.log("Collision with Character, energy", this.character.energy);
-      }
-    });
-  }, 200);
-}
+  checkCollisions() {
+    setInterval(() => {
+      this.level.enemies.forEach((enemy) => {
+        if (this.character.isColliding(enemy)) {
+          this.character.hit();
+          console.log(
+            "Collision with Character, energy",
+            this.character.energy,
+          );
+        }
+      });
+    }, 200);
+  }
 
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
