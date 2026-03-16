@@ -13,8 +13,8 @@ export class World {
     this.ctx = canvas.getContext("2d");
     this.canvas = canvas;
     this.keyboard = keyboard;
-    this.draw();
     this.setWorld();
+    this.draw();
     this.checkCollisions();
   }
 
@@ -41,16 +41,14 @@ export class World {
     this.ctx.translate(this.camera_x, 0);
 
     this.addObjectsToMap(this.level.backgroundObjects);
-    this.addToMap(this.character);
-    this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.enemies);
+    this.addObjectsToMap(this.level.clouds);
+    this.addToMap(this.character);
 
     this.ctx.translate(-this.camera_x, 0);
 
     let self = this;
-    requestAnimationFrame(function () {
-      self.draw();
-    });
+    requestAnimationFrame(() => {this.draw()});
   }
 
   addObjectsToMap(objects) {
@@ -70,6 +68,7 @@ export class World {
       this.flipImageBack(mo);
     }
   }
+
   flipImage(mo) {
     this.ctx.save();
     this.ctx.translate(mo.width, 0);
