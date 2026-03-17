@@ -1,4 +1,4 @@
-import { Level } from "../../models/level.class.js";
+import {Level } from "../../models/level.class.js";
 import { Cloud } from "../../models/cloud.class.js";
 import { Chicken } from "../../models/chicken.class.js";
 import { BackgroundObject} from "../../models/background-object.class.js";
